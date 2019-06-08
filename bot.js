@@ -24,9 +24,9 @@ client.on("message", message => {
 
     if(message.channel.type === "dm") return;
 
-    if(!message.content.startsWith('!')) return;
+    if(!message.content.startsWith('+')) return;
 
-    if(command === '!announce') {
+    if(command === '+ann') {
         let channel = message.mentions.channels();
         let announcement = args.slice(1).join(" ");
 
