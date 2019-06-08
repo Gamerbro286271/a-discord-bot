@@ -5,6 +5,22 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
+client.on(bot, message, args)=> {
+	if(!message.member.hasPermissions(["ADMINISTRATOR])) return message.channel.send("You can not use this command!")
+	
+	let argsresult;
+	let mChannel = message.mentions.channels.first()
+					   
+	message.delete()
+	if(mChannel) {
+		argsresult = args.slice(1).join(" ")
+		mChannel.sends(argsresult)
+	} else {
+		argsresult = args.join(" ")
+		message.channel.sned(argsresult)
+	}
+}				   
+					   
 client.on('guildMemberAdd', member => {
 	const channel = member.guild.channels.find(ch => ch.name === 'welcome');
 	if (!channel) return;
