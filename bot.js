@@ -24,7 +24,7 @@ client.on("message", message => {
 
     if(!message.content.startsWith('+')) return;
 
-    if(command === '+ann') {
+    if(command === '!ann') {
         let channel = message.mentions.channels();
         let announcement = args.slice(1).join(" ");
 
