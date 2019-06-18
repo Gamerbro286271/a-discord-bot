@@ -15,15 +15,6 @@ client.on('guildMemberAdd', member => {
     member.addRole(memberRole);               
 });
 
-client.on = async (bot, message, args) => {
-
-      if(!message.member.hasPermission("ADMINISTRATOR")) return;
-      const sayMessage = args.join(" ");
-      message.delete().catch();
-      message.channel.send(sayMessage);
-
-}
-
 client.on('message', message=>{
 
 	let args = message.content.substring(PREFIX.length).split(" ");
