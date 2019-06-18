@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const fs = require("fs");
 
 const PREFIX = '!';
 
@@ -18,7 +19,7 @@ client.on('guildMemberAdd', member => {
 client.on('message', message=>{
 
 	let args = message.content.substring(PREFIX.length).split(" ");
-
+	
 	switch(args[0]){
 		case 'ping':
 			message.channel.sendMessage('pong!')
