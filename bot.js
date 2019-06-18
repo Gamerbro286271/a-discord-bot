@@ -33,7 +33,8 @@ client.on('message', message=>{
 			break;
 		case 'announce':
 			const embed = new Discord.RichEmbed()
-			.addField('','This is a test')
+			.setTitle (' ')
+			.addField(' ','This is a test')
 		case 'help':
 			const embed = new Discord.RichEmbed()
 			.setTitle('Informaion')
