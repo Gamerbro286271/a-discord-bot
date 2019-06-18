@@ -23,11 +23,17 @@ client.on('message', message=>{
 		case 'ping':
 			message.channel.sendMessage('pong!')
 			break;
+		case 'say':
+			message.channel.sendEmbed.message
+			if(!message.member.roles.find(r => r.name === "Staff")) return message.channel.send('YOU DO NOT HAVE PERMISSIONS')
 		case 'clear':
 			if(!message.member.roles.find(r => r.name === "Staff")) return message.channel.send('YOU DO NOT HAVE PERMISSIONS')
 			if(!args[1]) return message.reply('Error please define a certain amount')
 			message.channel.bulkDelete(args[1]);
 			break;
+		case 'announce':
+			const embed = new Discord.RichEmbed()
+			.addField('','This is a test')
 		case 'help':
 			const embed = new Discord.RichEmbed()
 			.setTitle('Informaion')
@@ -43,4 +49,4 @@ client.on('message', message=>{
 })
 
 // THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN); 
