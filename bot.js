@@ -28,11 +28,6 @@ client.on('message', message=>{
 			if(!args[1]) return message.reply('Error please define a certain amount')
 			message.channel.bulkDelete(args[1]);
 			break;
-		case 'announce':
-			const embed = new Discord.RichEmbed()
-			.setTitle (' ')
-			.addField(' ','This is a test')
-			break;
 		case 'help':
 			const embed = new Discord.RichEmbed()
 			.setTitle('Informaion')
